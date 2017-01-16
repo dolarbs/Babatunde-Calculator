@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+
+    body{background:url(backgroundsimg1.jpg);}
+
+	.background {
+    width:500px;
+    height:500px;
+    background:gray;
+    margin:50px auto;
+    -webkit-animation:bgChange 2s 2s alternate infinite;
+    transition: all 2s ease;
+    /*border:5px solid grey;*/
+			-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+			border-radius: 0 20% 0 15%;
+			padding-left: 40px;
+	}
+
+	/* Adding background color to the number values */
+ 	.num-bg {
+    background:#000;
+    color:#fff;
+    font-size:26px;
+    cursor:pointer;
+    outline:none;
+    border-bottom:3px solid #333;
+}
+/* Button styling */
+.btn-style {
+    width:50px;
+    height:50px;
+    margin-left:5px;
+    border-radius:4px;
+}
+ 	.num-bg:active {
+    background:#000;
+    color:#fff;
+    font-size:26px;
+    cursor:pointer;
+    outline:none;
+    box-shadow: inset 5px 5px 5px #555;
+    transition: 1s;
+}
+
+button {
+    border:0;
+    color:#fff;
+}
+
+#result {
+    display:block;
+    font-family: sans-serif;
+    width:390px;
+    height:30px;
+    margin:10px auto;
+    text-align: right;
+    border:0;
+    background:#3b3535;
+    color:#fff;
+    padding-top:20px;
+    font-size:20px;
+    margin-left: 10px;
+    outline: none;
+    overflow: hidden;
+    letter-spacing: 4px;
+    position: relative;
+    /*top:10px;*/
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+			border-radius: 0 20% 0 15%;
+}
+
+#result:hover {
+    
+    cursor: text;
+    
+}
+/*Adding background color to the operator values */ 
+.opera-bg {
+    background:#333;
+    color:#fff;
+    font-size:26px;
+    cursor: pointer;
+    outline:none;
+    border-bottom:3px solid #555;
+}
+
+.opera-bg:active {
+    background:#333;
+    color:#fff;
+    font-size:26px;
+    cursor: pointer;
+    outline:none;
+    box-shadow: inset 4px 4px 4px #555;
+}
+
+/*Adding a background color to the delete button */
+.del-bg {
+    background:#24b4de;
+    color:#fff;
+    font-size:26px;
+    cursor: pointer;
+    outline:none;
+    border-bottom:3px solid #399cb9;
+}
+
+.del-bg:active {
+    background:#24b4de;
+    color:#fff;
+    font-size:26px;
+    cursor: pointer;
+    outline:none;
+    box-shadow: inset 4px 4px 4px #399cb9;
+}
+
+/*Adding a background color to the equals to button */
+#eql {
+    background:#17a928;
+    color:#fff;
+    font-size:26px;
+    cursor: pointer;
+    outline:none;
+    border-bottom:3px solid #1f7a29;
+}
+
+#eql:active {
+    background:#17a928;
+    color:#fff;
+    font-size:26px;
+    cursor: pointer;
+    outline:none;
+    box-shadow: inset 4px 4px 4px #1f7a29;
+}
+
+@-webkit-keyframes bgChange {
+    0% {
+       background:#24b4de; 
+    }
+    
+    50% {
+      background:#17a928;
+    }
+    
+    100% {
+        background:#399cb9;
+    }
+}
+
+
+			/*table{border:5px solid grey;
+			-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+			border-radius: 0 20% 0 15%;
+		}
+		 th{
+		 	border:5px solid grey;
+		-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+			border-radius: 0 50% 0 50%;}
+	td{text-align: center;position: relative;}
+		th{font-weight: bolder;text-align: right;padding-right: 5px;font-size: 60px;color: blue;}
+		td:hover{font-size: 40px;transition: 1s;}
+		tr{border: 6px solid black;}*/
+	</style>
+	
+	<title>Announcement</title>
+</head>
+<header>
+	
+<body>
+	<form name="calc" class="background">
+		<table width="500px" height="500px">
+			<tr> <th colspan="6"><h4 id="exp"></h4><input type="text" id="result" name="Input"></th></tr>
+			<tr>
+				<td><input type="button" class="btn-style num-bg num" name="seven" value="7" onclick="calc.Input.value+='7'"></td>
+				<td><input type="button" class="btn-style num-bg num" name="eight" value="8" onclick="calc.Input.value+='8'"></td>
+				<td><input type="button" class="btn-style num-bg num" name="nine" value="9" onclick="calc.Input.value+='9'"></td>
+				<td><input type="button" class="btn-style opera-bg operator" name="multiply" value="*" onclick="calc.Input.value+='*'"></td>
+				<td><input type="button" class="btn-style opera-bg operator" name="div" value="/" onclick="calc.Input.value+='/'"></td>
+ 			</tr>
+			<tr>
+				<td><input type="button" class="btn-style num-bg num" name="four" value="4" onclick="calc.Input.value+='4'"></td>
+				<td><input type="button" class="btn-style num-bg num" name="five" value="5" onclick="calc.Input.value+='5'"></td>
+				<td><input type="button" class="btn-style num-bg num" name="six" value="6" onclick="calc.Input.value+='6'"></td>
+				<td><input type="button" class="btn-style opera-bg operator" name="subtract" value="-" onclick="calc.Input.value+='-'"></td>
+				<td><input type="button" class="btn-style opera-bg operator" name="Ave" value="ave" 
+                onclick="document.getElementById('exp').innerHTML=calc.Input.value; getAve()"></td>
+			</tr>
+			<tr>
+				<td><input type="button" class="btn-style num-bg num" name="one" value="1" onclick="calc.Input.value+='1'"></td>
+				<td><input type="button" class="btn-style num-bg num" name="two" value="2" onclick="calc.Input.value+='2'"></td>
+				<td><input type="button" class="btn-style num-bg num" name="three" value="3" onclick="calc.Input.value+='3'"></td>
+				<td><input type="button" class="btn-style opera-bg operator" name="plus" value="+" onclick="calc.Input.value+='+'"></td>
+				<td><input type="button" class="del-bg" name="reset" value="c" onclick="calc.Input.value=0"></td>
+			</tr>
+			<tr>
+				<td><input type="button" class="btn-style num-bg num" name="zero" value="0" onclick="calc.Input.value+='0'"></td>
+				<td><input type="button" class="btn-style num-bg num" name="dot" value="." onclick="calc.Input.value+='.'"></td>
+				<td><input type="button" class="btn-style num-bg num" name="par1" value="(" onclick="calc.Input.value+='('"></td>
+				<td><input type="button" class="btn-style num-bg num" name="par2" value=")" onclick="calc.Input.value+=')'"></td>
+				<td><input type="button" class="eql align" id="eql" name="eql" value="="onclick="document.getElementById('exp').innerHTML=
+				calc.Input.value; calc.Input.value=eval(calc.Input.value)"  ></td>
+				
+			</tr>	
+
+			</td></tr>	
+		</table>
+</body>
+<footer>
+	<div><h1></h1></div>
+</footer>
+<script type="">
+	var one1
+	function btnOneresetNset(){one1=number(document.getElementByID("btn1").value);};
+
+function getAve()
+{
+   var exp = document.getElementById("result");
+   var splitExp = exp.value.split("+");
+   var numCount = splitExp.length;
+   var expAve =eval(exp.value)/numCount;
+    //var expAve=expSum/numCount;
+    document.getElementById("result").value = expAve;
+    document.getElementById("exp").innerHTML='('+exp+') / '+numCount;
+
+}
+
+
+</script>
+</html>
